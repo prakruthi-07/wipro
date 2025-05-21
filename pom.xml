@@ -27,7 +27,19 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+<repositories>
+    <repository>
+        <id>nexus-releases</id>
+        <name>maven-releases</name>
+        <url>http://13.201.95.230:8081/repository/maven-releases/</url>
+    </repository>
+    <repository>
+        <id>nexus-snapshots</id>
+        <name>maven-snapshots</name>
+        <url>http://13.201.95.230:8081/repository/maven-snapshots/</url>
+    </repository>
+</repositories>
+  
   <build>
     <finalName>tech</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -64,4 +76,16 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <distributionManagement>
+    <repository>
+        <id>nexus-releases</id>
+        <url>http://13.201.95.230:8081/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+        <id>nexus-snapshots</id>
+        <url>http://13.201.95.230:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+</distributionManagement>
+  
 </project>
