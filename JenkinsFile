@@ -1,12 +1,31 @@
 pipeline{
 agent any
 
+
+tools{
+maven 'maven'
+}
+
 stages{
-stage('source'){
+stage('first stage'){
+steps{
+git branch: 'main', url: 'https://github.com/prakruthi-07/wipro.git'
+}
+}
+stage('clean'){
+steps{
+sh 'mvn clean'
+}
+}
+stage('package'){
+steps{
+sh 'mvn package'
+}
+}
+stage('second stage'){
 steps{
 sh 'mvn clean deploy -s Settings.xml'
 }
 }
 }
 }
-
