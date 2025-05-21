@@ -1,0 +1,11 @@
+pipeline{
+agent any
+
+stages{
+stage('src from git')
+steps{
+sh 'mvn clean deploy -s Settings.xml'
+}
+}
+}
+}
