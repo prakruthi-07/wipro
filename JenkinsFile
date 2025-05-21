@@ -6,10 +6,6 @@ maven 'maven'
 }
 
 stages{
-stage('src from git')
-steps{
-git branch: 'main', url: 'https://github.com/prakruthi-07/wipro.git'
-}
 stage('source'){
 steps{
 sh 'mvn clean deploy -s Settings.xml'
